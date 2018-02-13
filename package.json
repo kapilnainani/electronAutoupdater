@@ -5,10 +5,10 @@
   "description": "electron-updater example project",
   "author": "Matt Haggard",
   "scripts": {
-    "publish": "build -p always"
+    "publish": "build -p never"
   },
   "devDependencies": {
-    "electron": "^1.7.9",
+    "electron": "^1.8.2",
     "electron-builder": "^19.43.3"
   },
   "dependencies": {
@@ -17,7 +17,7 @@
   },
   "build": {
     "appId": "com.github.iffy.electronupdaterexample",
-    "productName": "AppirioDX test",
+    "productName": "AppirioDXtest",
     "publish": [
       {
         "provider": "github",
