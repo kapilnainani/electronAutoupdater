@@ -1,0 +1,4 @@
+appId: appiriodxapp
+publish:
+    provider: gitlab
+    token: _mc1DayHiqNPm_Uo4sbw
