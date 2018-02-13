@@ -1,9 +1,9 @@
 // This is free and unencumbered software released into the public domain.
 // See LICENSE for details
 
-const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
+const { app, BrowserWindow, Menu, protocol, ipcMain } = require('electron');
 const log = require('electron-log');
-const {autoUpdater} = require("electron-updater");
+const { autoUpdater } = require("electron-updater");
 
 //-------------------------------------------------------------------
 // Logging
@@ -88,12 +88,12 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
 });
-app.on('ready', function() {
+app.on('ready', function () {
   // Create the Menu
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
-
   createDefaultWindow();
+  autoUpdater.checkForUpdates();
 });
 app.on('window-all-closed', () => {
   app.quit();
@@ -109,7 +109,7 @@ app.on('window-all-closed', () => {
 // This will immediately download an update, then install when the
 // app quits.
 //-------------------------------------------------------------------
-app.on('ready', function()  {
+app.on('ready', function () {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
@@ -138,5 +138,5 @@ app.on('ready', function()  {
 // autoUpdater.on('download-progress', (progressObj) => {
 // })
 // autoUpdater.on('update-downloaded', (info) => {
-//   autoUpdater.quitAndInstall();  
+//   autoUpdater.quitAndInstall();
 // })

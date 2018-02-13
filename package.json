@@ -2,11 +2,14 @@
   "name": "electron-updater-example",
   "version": "0.5.0",
   "main": "main.js",
+  "productName": "ADX",
   "description": "electron-updater example project",
   "author": "Matt Haggard",
   "scripts": {
-    "publish": "build -p never"
+    "build": "build",
+    "ship": "build -p never"
   },
+  "repository": "https://gitlab.appirio.com/appirio-dx/appiriodx-desktop-autoupdater.git",
   "devDependencies": {
     "electron": "^1.8.2",
     "electron-builder": "^19.43.3"
